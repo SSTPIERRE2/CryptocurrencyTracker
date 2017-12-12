@@ -1,15 +1,16 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 
 const Header = () => (
     <View style={styles.headerContainer}>
-      <Text style={styles.headerText}>Hello World!</Text>
+      <Text style={styles.headerText}>Crypto Tracker</Text>
     </View>
 );
 
+const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
 const styles = StyleSheet.create({
   headerContainer: {
-    height: 60,
+    height: APPBAR_HEIGHT,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontWeight: 'bold',
     fontSize: 20,
-    fontFamily: 'Roboto',
+    fontFamily: Platform.OS === 'Android' ? 'Roboto' : 'System',
     color: '#fff'
   }
 });
