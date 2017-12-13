@@ -6,7 +6,7 @@ import {
   FETCHING_COIN_DATA_FAIL
 } from '../utils/ActionTypes';
 
-export default function FetchCoinData() {
+export function FetchCoinData() {
   return dispatch => {
     dispatch({ type: FETCHING_COIN_DATA });
 
